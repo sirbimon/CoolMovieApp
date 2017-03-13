@@ -98,6 +98,7 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
         if segue.identifier == "detailSegue" {
             if let destVC = segue.destination as? MovieDetailViewController {
                 destVC.movieTitle = store.movies[selectedRow].title
+                destVC.movieURLString = store.movies[selectedRow].posterURL
 
                 
                 
