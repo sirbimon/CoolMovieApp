@@ -19,6 +19,8 @@
 		E745BE781E7334B200081DA3 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745BE771E7334B200081DA3 /* MovieDetails.swift */; };
 		E745BE7A1E7341A100081DA3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745BE791E7341A100081DA3 /* CollectionViewCell.swift */; };
 		F04648381E744D8E0013A530 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04648371E744D8E0013A530 /* MovieDetailViewController.swift */; };
+		F046483A1E76E3640013A530 /* MoviePlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04648391E76E3640013A530 /* MoviePlot.swift */; };
+		F046483C1E76E3CF0013A530 /* PlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F046483B1E76E3CF0013A530 /* PlotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		E745BE771E7334B200081DA3 /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		E745BE791E7341A100081DA3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F04648371E744D8E0013A530 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		F04648391E76E3640013A530 /* MoviePlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlot.swift; sourceTree = "<group>"; };
+		F046483B1E76E3CF0013A530 /* PlotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +76,11 @@
 				E745BE5D1E73273900081DA3 /* FirstViewController.swift */,
 				E745BE711E732AE900081DA3 /* MovieCollectionViewController.swift */,
 				F04648371E744D8E0013A530 /* MovieDetailViewController.swift */,
+				F046483B1E76E3CF0013A530 /* PlotViewController.swift */,
 				E745BE751E732E0900081DA3 /* MovieDataStore.swift */,
 				E745BE731E732DA200081DA3 /* Movie.swift */,
 				E745BE771E7334B200081DA3 /* MovieDetails.swift */,
+				F04648391E76E3640013A530 /* MoviePlot.swift */,
 				E745BE791E7341A100081DA3 /* CollectionViewCell.swift */,
 				E745BE6F1E73285000081DA3 /* OMDBAPIClient.swift */,
 				E745BE611E73273900081DA3 /* Main.storyboard */,
@@ -117,7 +123,7 @@
 				TargetAttributes = {
 					E745BE571E73273900081DA3 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = H3P6GNU744;
+						DevelopmentTeam = X3V4LZU6AD;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -165,7 +171,9 @@
 				E745BE761E732E0900081DA3 /* MovieDataStore.swift in Sources */,
 				E745BE5E1E73273900081DA3 /* FirstViewController.swift in Sources */,
 				E745BE701E73285000081DA3 /* OMDBAPIClient.swift in Sources */,
+				F046483A1E76E3640013A530 /* MoviePlot.swift in Sources */,
 				F04648381E744D8E0013A530 /* MovieDetailViewController.swift in Sources */,
+				F046483C1E76E3CF0013A530 /* PlotViewController.swift in Sources */,
 				E745BE741E732DA200081DA3 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,10 +295,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3P6GNU744;
+				DEVELOPMENT_TEAM = X3V4LZU6AD;
 				INFOPLIST_FILE = CoolMovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.moeCodes.CoolMovieApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "TJ.Cool-Movie-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -300,10 +309,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H3P6GNU744;
+				DEVELOPMENT_TEAM = X3V4LZU6AD;
 				INFOPLIST_FILE = CoolMovieApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.moeCodes.CoolMovieApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "TJ.Cool-Movie-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -21,7 +21,6 @@ class CollectionViewCell: UICollectionViewCell {
             if let imageFromCache = store.imageCache.object(forKey: urlString as AnyObject) {
                 movie?.posterImg = (imageFromCache as! UIImage)
                 posterImg.image = (imageFromCache as! UIImage)
-                print()
                 return
             }
             
@@ -34,8 +33,7 @@ class CollectionViewCell: UICollectionViewCell {
                 self.store.imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
                 self.movie?.posterImg = imageToCache
                 self.posterImg.image = self.movie?.posterImg
-                print("image set!")
-            }
+           }
             
             
             

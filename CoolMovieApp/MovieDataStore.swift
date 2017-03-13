@@ -15,8 +15,9 @@ class MovieDataStore {
     
     var movies = [Movie]()
     var currentMovieDetails: MovieDetails?
+    var currentPlot: MoviePlot?
     var imageCache = NSCache<AnyObject, AnyObject>()
-    var passedMovie = Movie(title: "Placeholder", posterURL: "placeholderURL")
+    
     
     
     func createMovies(title: String, completion: @escaping ()->()) {
@@ -43,6 +44,15 @@ class MovieDataStore {
         }
         
         
+    }
+    
+    func createPlot(title: String, completion: @escaping () -> ()) {
+        OMDBAPIClient.getFullPlot(movieTitle: title) { (plotDict) in
+            self.currentPlot = MoviePlot(dictionary: plotDict)
+            print("TITLE: \(title)")
+            print("PLOT: \(self.currentPlot)")
+            completion()
+        }
     }
     
     
