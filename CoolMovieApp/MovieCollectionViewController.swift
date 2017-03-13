@@ -20,6 +20,7 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     
     let store = MovieDataStore.sharedInstance
+    var selectedRow = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,7 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.searchBar.delegate = self
-        
 
-        
-        store.createMovieDetails(title: "Star Wars: Episode IV - A New Hope")
         
     }
 
@@ -60,6 +58,7 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! CollectionViewCell
         cell.movie = store.movies[indexPath.item]
+        print("MOVIE: \(cell.movie)")
         
         return cell
     }
@@ -70,14 +69,40 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text else { return }
-        let validText = searchText.replacingOccurrences(of: " ", with: "+")
-        store.createMovies(title: "\(validText)") {
-            self.collectionView.reloadData()
+        
+            guard let searchText = searchBar.text else { return }
+            let validText = searchText.replacingOccurrences(of: " ", with: "+")
+            self.store.createMovies(title: "\(validText)") {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+            view.endEditing(true)
+
         }
         
-        view.endEditing(true)
+ 
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedRow = indexPath.item
+        self.performSegue(withIdentifier: "detailSegue", sender: self)
         
+    }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            if let destVC = segue.destination as? MovieDetailViewController {
+                destVC.movieTitle = store.movies[selectedRow].title
+
+                
+                
+            }
+        }
     }
     
 }

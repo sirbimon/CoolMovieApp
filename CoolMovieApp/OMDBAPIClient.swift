@@ -55,7 +55,6 @@ class OMDBAPIClient {
             guard let unwrappedData = data else { return }
             do {
                 let json = try JSONSerialization.jsonObject(with: unwrappedData, options: []) as? [String:String] ?? [:]
-                print(json)
                 completion(json)
                 
             } catch {

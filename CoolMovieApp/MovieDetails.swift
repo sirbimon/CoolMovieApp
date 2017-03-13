@@ -19,6 +19,8 @@ class MovieDetails {
     let imdbScore: String
     let metaScore: String
     
+    
+    
     init(dictionary: [String:String]) {
         self.title = dictionary["Title"] ?? "No Title"
         self.plot = dictionary["Plot"] ?? "No Plot"
@@ -30,4 +32,10 @@ class MovieDetails {
         self.metaScore = dictionary["Metascore"] ?? "0"
     }
     
+}
+
+extension MovieDetails: CustomStringConvertible {
+    var description: String {
+        return "Title: \(title)"
+    }
 }

@@ -23,3 +23,9 @@ class Movie {
     
     
 }
+
+extension Movie: CustomStringConvertible {
+    var description: String {
+        return "Title: \(title), PosterURL: \(posterURL)" 
+    }
+}

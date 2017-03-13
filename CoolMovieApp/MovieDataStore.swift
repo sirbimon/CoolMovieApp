@@ -15,6 +15,8 @@ class MovieDataStore {
     
     var movies = [Movie]()
     var currentMovieDetails: MovieDetails?
+    var imageCache = NSCache<AnyObject, AnyObject>()
+    var passedMovie = Movie(title: "Placeholder", posterURL: "placeholderURL")
     
     
     func createMovies(title: String, completion: @escaping ()->()) {
@@ -25,7 +27,6 @@ class MovieDataStore {
             for result in searchResults {
                 let title = result["Title"] as? String ?? "No Title"
                 let poster = result["Poster"] as? String ?? "No Poster"
-                print(title)
                 let newMovie = Movie(title: title, posterURL: poster)
                 self.movies.append(newMovie)
             }
@@ -33,12 +34,14 @@ class MovieDataStore {
         }
     }
     
-    func createMovieDetails(title: String) {
-        currentMovieDetails = nil
+    func createMovieDetails(title: String, completion: @escaping () -> ()) {
+        print("GOT CALLED!")
         OMDBAPIClient.getMovieDetails(movieTitle: title) { (detailsDict) in
             self.currentMovieDetails = MovieDetails(dictionary: detailsDict)
-            print(self.currentMovieDetails?.title)
+            print(self.currentMovieDetails?.title as Any)
+            completion()
         }
+        
         
     }
     

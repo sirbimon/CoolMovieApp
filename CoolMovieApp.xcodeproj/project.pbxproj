@@ -18,6 +18,7 @@
 		E745BE761E732E0900081DA3 /* MovieDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745BE751E732E0900081DA3 /* MovieDataStore.swift */; };
 		E745BE781E7334B200081DA3 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745BE771E7334B200081DA3 /* MovieDetails.swift */; };
 		E745BE7A1E7341A100081DA3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E745BE791E7341A100081DA3 /* CollectionViewCell.swift */; };
+		F04648381E744D8E0013A530 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04648371E744D8E0013A530 /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E745BE751E732E0900081DA3 /* MovieDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDataStore.swift; sourceTree = "<group>"; };
 		E745BE771E7334B200081DA3 /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		E745BE791E7341A100081DA3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F04648371E744D8E0013A530 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				E745BE5B1E73273900081DA3 /* AppDelegate.swift */,
 				E745BE5D1E73273900081DA3 /* FirstViewController.swift */,
 				E745BE711E732AE900081DA3 /* MovieCollectionViewController.swift */,
+				F04648371E744D8E0013A530 /* MovieDetailViewController.swift */,
 				E745BE751E732E0900081DA3 /* MovieDataStore.swift */,
 				E745BE731E732DA200081DA3 /* Movie.swift */,
 				E745BE771E7334B200081DA3 /* MovieDetails.swift */,
@@ -162,6 +165,7 @@
 				E745BE761E732E0900081DA3 /* MovieDataStore.swift in Sources */,
 				E745BE5E1E73273900081DA3 /* FirstViewController.swift in Sources */,
 				E745BE701E73285000081DA3 /* OMDBAPIClient.swift in Sources */,
+				F04648381E744D8E0013A530 /* MovieDetailViewController.swift in Sources */,
 				E745BE741E732DA200081DA3 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +328,7 @@
 				E745BE6E1E73273900081DA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
