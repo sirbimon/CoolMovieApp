@@ -63,6 +63,7 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
         
         return cell
     }
+    
 
     
     func turnStringIntoQuery(search: String) -> String {
@@ -73,11 +74,17 @@ class MovieCollectionViewController: UIViewController, UICollectionViewDelegate,
         guard let searchText = searchBar.text else { return }
         let validText = searchText.replacingOccurrences(of: " ", with: "+")
         store.createMovies(title: "\(validText)") {
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                 self.collectionView.reloadData()
+            }
         }
         
         view.endEditing(true)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
     }
     
 }

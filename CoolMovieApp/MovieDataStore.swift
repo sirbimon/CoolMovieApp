@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class MovieDataStore {
     
@@ -15,6 +16,7 @@ class MovieDataStore {
     
     var movies = [Movie]()
     var currentMovieDetails: MovieDetails?
+    var imageCache = NSCache<AnyObject, AnyObject>()
     
     
     func createMovies(title: String, completion: @escaping ()->()) {

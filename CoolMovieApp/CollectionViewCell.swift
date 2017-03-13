@@ -8,18 +8,32 @@
 
 import UIKit
 
+
 class CollectionViewCell: UICollectionViewCell {
     
+    var store = MovieDataStore.sharedInstance //this is to accesss the cachedImageStore
     
     var movie: Movie? {
         didSet {
             
+            guard let urlString = self.movie?.posterURL else { return }
+            posterImg.image = nil
+            
+            if let imageFromCache = store.imageCache.object(forKey: urlString as AnyObject) {
+                movie?.posterImg = (imageFromCache as! UIImage)
+                posterImg.image = (imageFromCache as! UIImage)
+                print()
+                return
+            }
+            
+            guard let url = URL(string: urlString) else { return }
+            guard let data = NSData(contentsOf: url) else { return }
+            guard let image = UIImage(data: data as Data) else { return }
+            
             DispatchQueue.main.async {
-                guard let urlString = self.movie?.posterURL else { return }
-                guard let url = URL(string: urlString) else { return }
-                guard let data = NSData(contentsOf: url) else { return }
-                guard let image = UIImage(data: data as Data) else { return }
-                self.movie?.posterImg = image
+                let imageToCache = image
+                self.store.imageCache.setObject(imageToCache, forKey: urlString as AnyObject)
+                self.movie?.posterImg = imageToCache
                 self.posterImg.image = self.movie?.posterImg
                 print("image set!")
             }
